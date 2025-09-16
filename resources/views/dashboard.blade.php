@@ -88,7 +88,7 @@
     <div class="container-fluid">
         <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
             <span style="background: #fff; border-radius: 50px; padding: 4px 12px; display: flex; align-items: center;">
-                <img src="http://localhost/images/SIAPRRI.png" alt="SIAPRRI Logo" style="height: 36px; margin-right: 10px;">
+                <img src="{{ asset('images/SIAPRRI.png') }}" alt="SIAPRRI Logo" style="height: 36px; margin-right: 10px;">
             </span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
