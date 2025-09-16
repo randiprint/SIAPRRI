@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SIBT – Sistem Informasi Barang Transmisi</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/SIAPRRI.png') }}">
+    <title>SIAPRRI – Permintaan Barang dan Peminjaman Kendaraan Dinas</title>
     <link rel="stylesheet" href="{{ asset('bt/css/bootstrap.css') }}">
     <style>
         body {
-            background: linear-gradient(135deg, #305ba9 0%, #6a82fb 100%);
+            background: linear-gradient(135deg, #3f76e2 0%, #6a82fb 100%);
             min-height: 100vh;
         }
         .login-card {
@@ -18,20 +19,20 @@
             background: rgba(255,255,255,0.95);
         }
         .login-header {
-            background: linear-gradient(90deg, #305ba9 60%, #6a82fb 100%);
+            background: linear-gradient(90deg, #3f76e2 60%, #6a82fb 100%);
             color: #fff;
             border-radius: 18px 18px 0 0;
         }
         .form-control:focus {
-            border-color: #305ba9;
+            border-color: #3f76e2;
             box-shadow: 0 0 0 0.2rem rgba(48,91,169,.25);
         }
         .btn-primary {
-            background: linear-gradient(90deg, #305ba9 60%, #6a82fb 100%);
+            background: linear-gradient(90deg, #3f76e2 60%, #6a82fb 100%);
             border: none;
         }
         .btn-primary:hover {
-            background: #305ba9;
+            background: #3f76e2;
         }
         .alert-danger {
             border-radius: 8px;
@@ -44,9 +45,9 @@
         <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
             <div class="col-md-7">
                 <div class="card login-card mt-1">
-                    <div class="card-header login-header pt-4 pb-4 text-center">
-                        <h4 class="mb-0">Sistem Informasi Barang Transmisi</h4>
-                    </div>
+                        <div class="card-header login-header text-center py-2">
+                            <img src="{{ asset('images/SIAPRRI.png') }}" alt="Logo" style="height: 110px;">
+                        </div>
                     <div class="card-body px-5 py-4">
                         {{-- tampilkan error jika ada --}}
                         @if ($errors->any())
@@ -77,7 +78,8 @@
                     </div>
                 </div>
                 <div class="text-center text-white mt-4" style="opacity: 0.7;">
-                    &copy; {{ date('Y') }} SIBT
+                    &copy; {{ date('Y') }} SIAPRRI - Sistem Informasi Aplikasi Permintaan Barang dan Peminjaman
+                    Kendaraan Dinas
                 </div>
             </div>
         </div>

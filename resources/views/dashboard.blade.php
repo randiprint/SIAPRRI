@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SIBT – Sistem Informasi Barang Transmisi</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/SIAPRRI.png') }}">
+    <title>SIAPRRI – Permintaan Barang dan Peminjaman Kendaraan Dinas</title>
     <link rel="stylesheet" href="{{ asset('bt/css/bootstrap.css') }}"><!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"><!-- Bootstrap Min CSS -->   
     <!-- Bootstrap Icons -->
@@ -18,7 +19,7 @@
             box-shadow: 0 2px 8px rgba(48,91,169,0.08);
         }
         .table thead {
-            background-color: #305ba9;
+            background-color: #3f76e2;
             color: #fff;
         }
         .btn-action {
@@ -56,7 +57,7 @@
             background: #fafdff;
         }
         .modal-header {
-            background: #305ba9;
+            background: #3f76e2;
             color: #fff;
             border-top-left-radius: 16px;
             border-top-right-radius: 16px;
@@ -76,16 +77,20 @@
             border-radius: 10px;
         }
         .form-control:focus {
-            border-color: #305ba9;
+            border-color: #3f76e2;
             box-shadow: 0 0 0 0.2rem rgba(48,91,169,0.08);
         }
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg" style="background-color: #305ba9;">
+<nav class="navbar navbar-expand-lg" style="background-color: #3f76e2;">
     <div class="container-fluid">
-        <a class="navbar-brand text-white fw-bold" href="#">SIBT</a>
+        <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
+            <span style="background: #fff; border-radius: 50px; padding: 4px 12px; display: flex; align-items: center;">
+                <img src="http://localhost/images/SIAPRRI.png" alt="SIAPRRI Logo" style="height: 36px; margin-right: 10px;">
+            </span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -94,33 +99,33 @@
             <ul class="navbar-nav me-auto mb-2 ms-5 mb-lg-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle @if(request()->is('/') || request()->is('fitur')) active bg-white text-primary @else text-white @endif fw-semibold" href="#" id="dataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Data
+                        Daftar Data
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dataDropdown">
                         <li>
-                            <a class="dropdown-item @if(request()->is('/')) active @endif" href="{{ route('dashboard', ['menu' => 'barang']) }}">Barang</a>
+                            <a class="dropdown-item @if(request()->is('/')) active @endif" href="{{ route('dashboard', ['menu' => 'barang']) }}">Data Barang</a>
                         </li>
-                        {{-- <li>
-                            <a class="dropdown-item @if(request()->is('fitur')) active @endif" href="{{ route('dashboard', ['menu' => 'kendaraan']) }}">Kendaraan</a>
-                        </li> --}}
+                        <li>
+                            <a class="dropdown-item @if(request()->is('fitur')) active @endif" href="{{ route('dashboard', ['menu' => 'kendaraan']) }}">Data Kendaraan</a>
+                        </li>
                         @if (isset($_COOKIE['status']) && $_COOKIE['status'] == 'umum')
                             <li>
-                                <a class="dropdown-item @if(request()->is('fitur')) active @endif" href="{{ route('dashboard', ['menu' => 'dpegawai']) }}">Pegawai</a>
+                                <a class="dropdown-item @if(request()->is('fitur')) active @endif" href="{{ route('dashboard', ['menu' => 'dpegawai']) }}">Data Pegawai</a>
                             </li>
                         @endif
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" id="transaksiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Transaksi
+                        Daftar Transaksi
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="transaksiDropdown">
                         <li>
                             <a class="dropdown-item" href="{{ route('dashboard', ['menu' => 'tbarang']) }}">Transaksi Barang</a>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a class="dropdown-item" href="{{ route('dashboard', ['menu' => 'tkendaraan']) }}">Transaksi Kendaraan</a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </li>
             </ul>

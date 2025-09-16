@@ -1,6 +1,6 @@
 <div class="container-fluid py-4 px-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="fw-bold text-primary mb-0">Data Transaksi Barang</h4>
+        <h4 class="fw-bold text-primary mb-0">Daftar Transaksi Barang</h4>
         <div class="d-flex flex-column align-items-end me-3" style="min-width: 320px;">
             <form action="{{ route('dashboard.search', ['menu' => 'tbarang']) }}" method="GET" class="d-flex align-items-center w-100 mb-1">
                 <input type="text" name="search" class="form-control me-2" placeholder="Cari transaksi..." value="" style="min-width:180px;" autofocus>
